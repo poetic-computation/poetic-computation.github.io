@@ -16,7 +16,7 @@ vec4 lineDistort(vec4 cTextureScreen, vec2 uv1){
   float accelerator= 1000.0;
 
   // sample the source
-  float x = uv1.x * uv1.y * iGlobalTime * accelerator;
+  float x = uv1.x * uv1.y * time * accelerator;
   x = mod( x, 13.0 ) * mod( x, 123.0 );
   float dx = mod( x, 0.05 );
   vec3 cResult = cTextureScreen.rgb + cTextureScreen.rgb * clamp( 0.1 + dx * 100.0, 0.0, 1.0 );
