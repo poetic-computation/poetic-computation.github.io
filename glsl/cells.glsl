@@ -16,12 +16,12 @@ void main() {
     int id = 0;
     vec2 p = vec2(0.);
     vec3 pp = vec3( 0.,0., .5 );
-    vec3 lightDir = vec3( sin( time ), 1., cos( time * .5 ) );
+    vec3 lightDir = vec3( sin( time*0.0000000000000001 ), 1., cos( time * *0.0000000000000001 ) );
 
     const int count = 200;
     for( int i = 0; i < count; i++ )
     {
-        float an = sin( time * PI * .00001 ) - hash( float(i) ) * PI * 2.;
+        float an = sin( time * PI * .000001 ) - hash( float(i) ) * PI * 2.;
 
         float ra = sqrt( hash( an ) );
 
