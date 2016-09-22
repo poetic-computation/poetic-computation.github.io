@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, shrink-to-fit=0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>Poetic Computation</title>
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Shade" rel="stylesheet">
     <style>
         head, body{
             width:100%;
@@ -14,46 +14,37 @@
             left:0;
             margin:0;
             padding:0;
-            font-family: 'Bungee Inline', cursive;
         }
+        h1{ font-family:'Bungee Inline', cursive; 
+            width: 100%;
+            text-align: center; }
     </style>
 </head>
 <body>
     <h1>Poetic Computation</h1>
-    
-<script src="vendor/three.min.js"></script>
-<script src="raymarcher.js"></script>
-
-<script>
-
+    <script src="vendor/three.min.js"></script>
+    <script src="raymarcher.js"></script>
+    <script>
     var rm;
     function init() {
-
         rm = new RayMarcher();
         rm.loadFragmentShader("glsl/cells.glsl");
         document.body.appendChild( rm.domElement );
-
         window.addEventListener( "resize", onResize, false );
         onResize();
     }
 
     function onResize(e){
-
         rm.setSize( window.innerWidth, window.innerHeight );
     }
 
     function animate() {
-
         requestAnimationFrame( animate );
         rm.render();
     }
 
     init();
     animate();
-
-
-
-</script>
-
+    </script>
 </body>
 </html>
